@@ -1,26 +1,170 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>나만의 비밀 우체통</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A letter to Lucky</title>
     <style>
-        body { background-color: #121212; color: #00ff88; font-family: sans-serif; text-align: center; padding: 50px; }
-        .box { border: 2px solid #00ff88; padding: 20px; display: inline-block; border-radius: 15px; }
-        input, textarea { width: 90%; margin: 10px 0; padding: 10px; background: #222; border: 1px solid #444; color: white; }
-        button { background: #00ff88; color: black; border: none; padding: 10px 20px; font-weight: bold; cursor: pointer; }
+        /* 배경 및 폰트 설정 */
+        body { 
+            background-color: #0d1117; 
+            color: #c9d1d9; 
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0; 
+            padding: 20px;
+        }
+        
+        .container { 
+            background: #161b22; 
+            padding: 40px 30px; 
+            border-radius: 24px; 
+            border: 1px solid #30363d; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+            width: 100%; 
+            max-width: 450px; 
+            box-sizing: border-box; 
+        }
+
+        h1 { 
+            text-align: center; 
+            font-size: 1.8rem; 
+            margin-bottom: 8px; 
+            color: #58a6ff; 
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle { 
+            text-align: center; 
+            font-size: 0.9rem; 
+            color: #8b949e; 
+            margin-bottom: 30px; 
+        }
+
+        .input-group { margin-bottom: 24px; }
+
+        label { 
+            display: block; 
+            margin-bottom: 10px; 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            color: #f0f6fc;
+        }
+
+        input[type="text"], textarea { 
+            width: 100%; 
+            padding: 14px; 
+            background: #0d1117; 
+            border: 1px solid #30363d; 
+            border-radius: 12px; 
+            color: #f0f6fc; 
+            box-sizing: border-box; 
+            outline: none; 
+            transition: 0.2s;
+        }
+        
+        input:focus, textarea:focus { 
+            border-color: #58a6ff; 
+            background: #161b22;
+        }
+
+        /* 친밀도 객관식 스타일 */
+        .radio-container { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 12px; 
+            background: #0d1117; 
+            padding: 18px; 
+            border-radius: 12px; 
+            border: 1px solid #30363d; 
+        }
+
+        .radio-item { 
+            display: flex; 
+            align-items: center; 
+            cursor: pointer; 
+            font-size: 0.9rem; 
+            color: #8b949e; 
+            transition: 0.2s;
+        }
+
+        .radio-item input { 
+            margin-right: 10px; 
+            accent-color: #58a6ff; 
+            width: 18px; 
+            height: 18px; 
+        }
+
+        .radio-item:hover { color: #58a6ff; }
+
+        button { 
+            width: 100%; 
+            padding: 16px; 
+            background: #238636; 
+            border: none; 
+            border-radius: 12px; 
+            color: white; 
+            font-weight: bold; 
+            font-size: 1.1rem; 
+            cursor: pointer; 
+            transition: 0.3s; 
+            margin-top: 10px; 
+        }
+
+        button:hover { 
+            background: #2ea043; 
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(35, 134, 54, 0.4);
+        }
+
+        .footer { 
+            text-align: center; 
+            margin-top: 25px; 
+            font-size: 0.8rem; 
+            color: #484f58; 
+        }
     </style>
 </head>
 <body>
-    <div class="box">
-        <h1>📬 비밀 편지함</h1>
-        <p>내용은 나만 볼 수 있어!</p>
-        <form>
-            <input type="text" placeholder="이름 또는 활동명"><br>
-            <input type="text" placeholder="나를 알게 된 계기"><br>
-            <input type="text" placeholder="우리 친밀도는?"><br>
-            <textarea rows="5" placeholder="하고 싶은 말"></textarea><br>
-            <button type="button">편지 보내기 (연결 전)</button>
+    <div class="container">
+        <h1>A letter to Lucky!</h1>
+        <p class="subtitle">편지는 럭키만 볼수 있어요!</p>
+        
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSeRVkCm8Ay0suTV6912Vf8wBW3klL8pTjfp1qFLnwTtrLdZUw/formResponse" method="POST">
+            
+            <div class="input-group">
+                <label>이름 또는 활동명</label>
+                <input type="text" name="entry.222384194" placeholder="당신을 알려주세요" required>
+            </div>
+
+            <div class="input-group">
+                <label>럭키를 알게 된 계기</label>
+                <input type="text" name="entry.1442129524" placeholder="어떤 인연으로 만났나요?" required>
+            </div>
+
+            <div class="input-group">
+                <label>럭키와의 친밀도</label>
+                <div class="radio-container">
+                    <label class="radio-item"><input type="radio" name="entry.1017445763" value="스쳐가는 인연" required> 스쳐가는 인연</label>
+                    <label class="radio-item"><input type="radio" name="entry.1017445763" value="이름은 앎"> 이름은 앎</label>
+                    <label class="radio-item"><input type="radio" name="entry.1017445763" value="지인"> 지인</label>
+                    <label class="radio-item"><input type="radio" name="entry.1017445763" value="친함"> 친함</label>
+                    <label class="radio-item"><input type="radio" name="entry.1017445763" value="짱친함"> 짱친함</label>
+                    <label class="radio-item"><input type="radio" name="entry.1017445763" value="Love"> Love</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>A letter to Lucky!</label>
+                <textarea name="entry.1741517409" rows="6" placeholder="자유롭게 이야기를 남겨주세요" required></textarea>
+            </div>
+
+            <button type="submit">편지 보내기!</button>
         </form>
+        <div class="footer">© 2026 lucky-0302. Built with heart.</div>
     </div>
 </body>
 </html>
