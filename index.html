@@ -26,14 +26,14 @@
             max-width: 450px; 
             text-align: center;
         }
-        h1 { font-size: 1.8rem; color: #58a6ff; margin-bottom: 10px; }
+        h1 { font-size: 1.8rem; color: #58a6ff; margin-bottom: 10px; text-shadow: 0 0 10px rgba(88, 166, 255, 0.3); }
         .subtitle { font-size: 0.9rem; color: #8b949e; margin-bottom: 30px; }
         
         /* 편지 쓰기 버튼 */
         .btn-link {
             display: block;
             padding: 16px;
-            background: #238636;
+            background: linear-gradient(135deg, #238636 0%, #2ea043 100%);
             color: white;
             text-decoration: none;
             border-radius: 12px;
@@ -41,10 +41,15 @@
             font-size: 1.1rem;
             transition: 0.3s;
             margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(35, 134, 54, 0.3);
         }
-        .btn-link:hover { background: #2ea043; transform: scale(1.02); }
+        .btn-link:hover { 
+            background: linear-gradient(135deg, #2ea043 0%, #3fb950 100%);
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 20px rgba(46, 160, 67, 0.4);
+        }
 
-        /* 명단 섹션 */
+        /* 명단 섹션 디자인 강화 */
         .list-section {
             border-top: 1px solid #30363d;
             padding-top: 30px;
@@ -53,26 +58,46 @@
         .list-title {
             font-size: 1rem;
             color: #f0f6fc;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             display: flex;
             align-items: center;
             gap: 8px;
+            font-weight: bold;
         }
         .name-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
             list-style: none;
             padding: 0;
         }
+        
+        /* 이름 아이템: 네온 효과 및 애니메이션 추가 */
         .name-item {
-            background: #21262d;
-            border: 1px solid #30363d;
-            padding: 6px 12px;
-            border-radius: 20px;
+            background: rgba(88, 166, 255, 0.1);
+            border: 1px solid rgba(88, 166, 255, 0.3);
+            padding: 8px 16px;
+            border-radius: 50px;
             font-size: 0.85rem;
-            color: #c9d1d9;
+            color: #58a6ff;
+            font-weight: 500;
+            transition: 0.3s;
+            cursor: default;
+            animation: fadeIn 0.5s ease-in-out;
         }
+        
+        .name-item:hover {
+            background: #58a6ff;
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(88, 166, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .footer { margin-top: 30px; font-size: 0.8rem; color: #484f58; }
     </style>
 </head>
@@ -86,7 +111,7 @@
         </a>
 
         <div class="list-section">
-            <div class="list-title">✨ 편지를 보내준 분들</div>
+            <div class="list-title">✨ 편지를 보내준 고마운 분들</div>
             <ul class="name-list">
                 <li class="name-item">루비</li>
                 <li class="name-item">라떼</li>
